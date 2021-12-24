@@ -14,13 +14,7 @@ class Student < Person
   end
 
   def add_classroom(classroom)
-    @classroom = classroom.label
+    @classroom = classroom
     classroom.students.push(self) unless classroom.students.include?(self)
   end
 end
-
-Student_1 = Student.new(15, 'Ahmed')
-Classroom_1 = Classroom.new('Math')
-Classroom_1.add_student(Student_1)
-
-p Classroom_1
